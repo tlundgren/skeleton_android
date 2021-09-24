@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Skeleton</string>
+
+    <string name="frPager_title">Skeleton</string>
+
+    <string name="frList_headerlabel">Sub Header</string>
+    <string name="frList_header">You can add, edit, and delete items.</string>
+    <string name="frList_listlabel">Items.</string>
+    <string name="frList_title">Data</string>
+    <string name="frList_fab">Add item</string>
+
+    <string name="frItem_title">Item</string>
+    <string name="frItem_attributes">Attributes</string>
+    <string name="frItem_namelabel">Name</string>
+    <string name="frItem_descriptionlabel">Description</string>
+    <string name="frItem_savemessage">Item saved.</string>
+    <string name="mnItem_save">Done</string>
+
+    <string name="frHeader_title">Summary</string>
+    <string name="frHeader_count">Data size</string>
+
+    <string name="caItem_icondescription">Icon of item: %1$s.</string>
+    <string name="caItem_delete">Delete</string>
+    <string name="caItem_edit">Edit</string>
+    <string name="caItem_handledescription">Drag item handle</string>
+
+    <string name="mnPager_help">Help</string>
+    <string name="mnPager_about">About</string>
+    <string name="mnPager_settings">Settings</string>
+
+    <string name="frSettings_settings">Settings</string>
+    <string name="frSettings_settingylabel">Preference Y</string>
+    <string name="frSettings_settingyhelper">Y is used for…</string>
+    <string name="frSettings_settingyplaceholder">Eg: some-y-value</string>
+    <string name="frSettings_tag">FragmentDialogSettings</string>
+
+    <string name="frAbout_title">About</string>
+    <string name="frAbout_header">About</string>
+    <string name="frAbout_body">Something about us.</string>
+
+    <string name="frHelp_title">Help</string>
+    <string name="frHelp_hgeneral">General</string>
+    <string name="frHelp_bgeneral">Skeleton has several screens. Try them out!</string>
+    <string name="frHelp_hsubject">Data</string>
+    <string name="frHelp_bsubject">You can create, edit, and delete items.</string>
+
+    <string name="frEula_title">End User License Agreement</string>
+    <string name="frEula_accept">ACCEPT</string>
+    <string name="frEula_decline">DECLINE</string>
+    <string name="frEula_message">
+\nWhat follows is only meant for illustration purposes.\n
+\nBy accepting this agreement you agree to the following terms, notwithstanding anything to the contrary in this agreement.\n
+\nLICENSE\n\nSubject to your compliance with these terms and conditions, you are hereby granted a royalty-free, non-exclusive, non-transferable license to use the Software.\n
+\nDISCLAIMER OF WARRANTY\n\nThis software is provided AS-IS, without any express or implied warranty including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose.\n
+    </string>
+
+    <string name="okay">OK</string>
+    <string name="cancel">CANCEL</string>
+</resources>

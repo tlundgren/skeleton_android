@@ -1,0 +1,132 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    compileSdkVersion 31
+    buildToolsVersion "31.0.0"
+    // ndkVersion "22.1.7171670"
+
+    defaultConfig {
+        applicationId "com.android.skeleton"
+        minSdkVersion 19
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+
+        // enable multiple dex files to support java 8 in any sdk
+        // (d8 implements missing java 8 apis in separate dex files)
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // to use vector drawable compat
+        vectorDrawables.useSupportLibrary true
+
+        javaCompileOptions {
+            // to export the db schema
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation":"$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            ndk { debugSymbolLevel 'FULL' }
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules-debug.pro'
+        }
+    }
+
+    compileOptions {
+        // enable support for java 11 new apis
+        coreLibraryDesugaringEnabled true
+        // set java compatibility to java 11
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        // required to use byViewModels kotlin property delegate from fragment-ktx
+        jvmTarget = "11"
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // android ktx
+    implementation "androidx.core:core-ktx:$corektx_version"
+
+    // support libraries
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.legacy:legacy-support-v4:$legacy_version"
+    //implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+    // support java 8 in any sdk version
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:$desugar_version"
+
+    // ui
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    implementation "androidx.viewpager2:viewpager2:$viewpager_version"
+    implementation "androidx.cardview:cardview:$cardview_version"
+
+    // preference
+    implementation "androidx.preference:preference-ktx:$preference_version"
+
+    // image loading, display, etc
+    // implementation "com.facebook.fresco:fresco:$fresco_version"
+
+    // lifecycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecyclevm_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleld_version"
+    // uncomment to use lifecycle annotations
+    // implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    // navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
+    // coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+
+    // room db
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+
+    // dependency injection
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    kapt "androidx.hilt:hilt-compiler:$hiltandroidxc_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltandroidx_version"
+
+    // logging timber
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+    // testing
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.arch.core:core-testing:$coretesting_version"
+    androidTestImplementation "androidx.test.ext:junit:$junitext_version"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
+    androidTestImplementation "androidx.test:rules:$testrules_version"
+}

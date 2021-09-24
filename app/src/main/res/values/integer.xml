@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 15 less 4 (3 decimal places and the decimal separtor) is still more than enough to
+     hold the largest max value of a line field while preventing the value to overflow -->
+    <integer name="field_size">15</integer>
+</resources>

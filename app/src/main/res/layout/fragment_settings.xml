@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".feature.FragmentSettings">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.android.skeleton.feature.ViewModelSettings" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/frHelp_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/margin_screenxl"
+            android:padding="@dimen/margin_screenl">
+
+            <TextView
+                android:id="@+id/frSettings_defaults"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screens"
+                android:layout_marginVertical="@dimen/margin_screenl"
+                android:text="@string/frSettings_settings"
+                android:textAlignment="viewStart"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/frSettings_settingylabel"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screens"
+                android:layout_marginVertical="@dimen/margin_screenl"
+                android:hint="@string/frSettings_settingylabel"
+                app:errorEnabled="true"
+                app:helperText="@string/frSettings_settingyhelper"
+                app:hintEnabled="true"
+                app:placeholderText="@string/frSettings_settingyplaceholder">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/frSettings_settingytext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:maxLength="@integer/field_size"
+                    android:inputType="text|textNoSuggestions" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

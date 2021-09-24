@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".feature.FragmentItem">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/frItem_coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/frItem_appbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/frItem_toolbar"
+                android:theme="@style/ThemeOverlay.Skeleton.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:paddingHorizontal="@dimen/margin_screenm"
+                app:menu="@menu/menu_item"
+                app:navigationContentDescription="@android:string/cancel"
+                app:navigationIcon="@drawable/ic_clear">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:text="@string/frItem_title"
+                    android:gravity="center_vertical|start"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/frItem_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingHorizontal="@dimen/margin_screenl"
+            android:paddingTop="@dimen/margin_screens"
+            android:paddingBottom="@dimen/margin_screenl"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:id="@+id/frItem_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/frItem_dimension"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_screens"
+                    android:layout_marginTop="@dimen/margin_screens"
+                    android:layout_marginBottom="@dimen/margin_screenm"
+                    android:text="@string/frItem_attributes"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/frItem_namelabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_screens"
+                            android:hint="@string/frItem_namelabel"
+                            app:errorEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/frItem_nametext"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="flagNoExtractUi"
+                                android:inputType="text|textNoSuggestions"
+                                android:maxLength="@integer/field_size"
+                                tools:text="myName" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/frItem_descriptionlabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_screens"
+                            android:hint="@string/frItem_descriptionlabel"
+                            app:errorEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/frItem_descriptiontext"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="flagNoExtractUi"
+                                android:inputType="text|textNoSuggestions"
+                                android:maxLength="@integer/field_size"
+                                tools:text="myDescription" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/frItem_cancel"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_screenxl"
+                        android:layout_marginTop="@dimen/margin_screens"
+                        android:layout_marginEnd="@dimen/margin_screenm"
+                        android:layout_weight="100"
+                        android:text="@string/cancel"
+                        tools:text="CANCEL" />
+
+                    <Button
+                        android:id="@+id/frItem_ok"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_screenm"
+                        android:layout_marginTop="@dimen/margin_screens"
+                        android:layout_marginEnd="@dimen/margin_screenxl"
+                        android:layout_weight="100"
+                        android:text="@string/okay"
+                        tools:text="OK" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

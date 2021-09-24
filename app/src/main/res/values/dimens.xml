@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_screenxl">32dp</dimen>
+    <dimen name="margin_screenl">16dp</dimen>
+    <dimen name="margin_screenm">8dp</dimen>
+    <dimen name="margin_screens">4dp</dimen>
+    <dimen name="margin_cards">4dp</dimen>
+    <dimen name="margin_cardm">8dp</dimen>
+    <dimen name="margin_cardl">16dp</dimen>
+    <dimen name="margin_cardxl">32dp</dimen>
+</resources>
