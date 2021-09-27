@@ -20,15 +20,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/frList_headerlabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_screenl"
-                android:layout_marginHorizontal="@dimen/margin_screenxl"
-                android:text="@string/frList_headerlabel"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
-
-            <TextView
                 android:id="@+id/frList_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -87,6 +87,7 @@ class FragmentPager : Fragment() {
         return when (position) {
             INDEX_HEADER -> getString(R.string.frHeader_title)
             INDEX_LIST -> getString(R.string.frList_title)
+            INDEX_RECIPES -> getString(R.string.frRecipes_title)
             else -> null
         }
     }

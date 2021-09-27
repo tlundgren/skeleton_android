@@ -2,7 +2,7 @@ package com.android.skeleton.data.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
-import com.android.skeleton.data.feature.AppDatabase
+import com.android.skeleton.data.feature.DaoItem
 import com.android.skeleton.data.feature.DbItem
 import com.android.skeleton.domain.Item
 import kotlinx.coroutines.Dispatchers
@@ -13,9 +13,8 @@ import javax.inject.Inject
 /**
  * Write, delete, read, [Item]s.
  */
-class RepositoryItem @Inject constructor(database: AppDatabase) {
-    private val daoItem = database.daoItem
-    private val defaultItem = Item("myName", "myDescription", 0)
+class RepositoryItem @Inject constructor(private val daoItem: DaoItem) {
+    private val defaultItem = Item("Item X", "Lorem ipsum...", 0)
 
     fun size(): LiveData<Int> {
         return daoItem.getCountLive()

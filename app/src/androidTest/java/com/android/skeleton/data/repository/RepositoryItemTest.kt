@@ -3,7 +3,7 @@ package com.android.skeleton.data.repository
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
-import com.android.skeleton.data.feature.AppDatabase
+import com.android.skeleton.data.feature.DatabaseApp
 import com.android.skeleton.domain.Item
 import com.android.skeleton.utility.getValue
 import kotlinx.coroutines.runBlocking
@@ -17,7 +17,7 @@ import java.io.IOException
  */
 class RepositoryItemTest {
 
-    private lateinit var database: AppDatabase
+    private lateinit var databaseApp: DatabaseApp
     private lateinit var repository: RepositoryItem
 
     @get:Rule
@@ -28,16 +28,16 @@ class RepositoryItemTest {
     @Before
     fun pre() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
-        database = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java)
+        databaseApp = Room.inMemoryDatabaseBuilder(context, DatabaseApp::class.java)
             .allowMainThreadQueries()
             .build()
-        repository = RepositoryItem(database)
+        repository = RepositoryItem(databaseApp.daoItem)
     }
 
     @After
     @Throws(IOException::class)
     fun post() {
-        database.close()
+        databaseApp.close()
     }
 
     /**

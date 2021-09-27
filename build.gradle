@@ -29,6 +29,9 @@ buildscript {
         runner_version = '1.3.0'
         jbenchmark_version = '1.0.0'
         preference_version = '1.1.1'
+        moshik_version = '1.12.0'
+        kotlinreflect_version = '1.5.31'
+        retrofitmoshi_version = '2.9.0'
     }
     repositories {
         google()

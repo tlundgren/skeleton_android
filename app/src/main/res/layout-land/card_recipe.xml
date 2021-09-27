@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="recipe"
+            type="com.android.skeleton.domain.Recipe" />
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/caRecipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_cardm"
+        android:layout_marginTop="@dimen/margin_cardm"
+        android:layout_marginEnd="@dimen/margin_cardm"
+        android:layout_marginBottom="@dimen/margin_cardm"
+        android:clickable="false"
+        android:focusable="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/caItem_header"
+                android:text="@{recipe.label}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_cards"
+                android:layout_marginEnd="@dimen/margin_cardxl"
+                android:layout_marginBottom="@dimen/margin_cards"
+                android:layout_marginStart="@dimen/margin_cardxl"
+                tools:text="Spicy Tuna" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".feature.recipe.FragmentRecipes">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.android.skeleton.feature.recipe.ViewModelRecipes" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/frRecipes_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_screenm"
+                android:layout_marginHorizontal="@dimen/margin_screenxl"
+                android:layout_marginBottom="@dimen/margin_screens"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:text="@string/frRecipes_header" />
+
+            <View
+                android:id="@+id/frRecipes_hdiv"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="@dimen/margin_screens"
+                android:layout_marginHorizontal="@dimen/margin_screenm"
+                android:background="?android:attr/listDivider" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/frRecipes_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/frRecipes_list"
+                android:contentDescription="@string/frRecipes_listlabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_screens"/>
+
+            <TextView
+                android:id="@+id/frRecipes_loadmessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_screenm"
+                android:layout_marginHorizontal="@dimen/margin_screenxl"
+                android:layout_marginBottom="@dimen/margin_screens"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:visibility="gone"
+                android:text="@string/frRecipes_loadfailed" />
+
+            <Button
+                android:id="@+id/frRecipes_loadbutton"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screenxl"
+                android:visibility="gone"
+                android:text="@string/frRecipes_tryagain" />
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

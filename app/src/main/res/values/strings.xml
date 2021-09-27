@@ -3,11 +3,16 @@
 
     <string name="frPager_title">Skeleton</string>
 
-    <string name="frList_headerlabel">Sub Header</string>
-    <string name="frList_header">You can add, edit, and delete items.</string>
+    <string name="frList_header">Data stored locally in a SQLite database using Room, accessed via repository and DAO.</string>
     <string name="frList_listlabel">Items.</string>
-    <string name="frList_title">Data</string>
+    <string name="frList_title">Items</string>
     <string name="frList_fab">Add item</string>
+
+    <string name="frRecipes_title">Recipes</string>
+    <string name="frRecipes_header">Data fetched from a remote server with Retrofit, domain classes built from the data with Moshi.</string>
+    <string name="frRecipes_listlabel">Recipes.</string>
+    <string name="frRecipes_loadfailed">Something went wrong. \nRecipes were not loaded.</string>
+    <string name="frRecipes_tryagain">Try again</string>
 
     <string name="frItem_title">Item</string>
     <string name="frItem_attributes">Attributes</string>
@@ -16,8 +21,9 @@
     <string name="frItem_savemessage">Item saved.</string>
     <string name="mnItem_save">Done</string>
 
-    <string name="frHeader_title">Summary</string>
-    <string name="frHeader_count">Data size</string>
+    <string name="frHeader_title">IStats</string>
+    <string name="frHeader_header">"Items" stats, updated live using Room and LiveData.</string>
+    <string name="frHeader_count">Item count</string>
 
     <string name="caItem_icondescription">Icon of item: %1$s.</string>
     <string name="caItem_delete">Delete</string>
@@ -36,7 +42,7 @@
 
     <string name="frAbout_title">About</string>
     <string name="frAbout_header">About</string>
-    <string name="frAbout_body">Something about us.</string>
+    <string name="frAbout_body">Something about the project, the app, the developers…</string>
 
     <string name="frHelp_title">Help</string>
     <string name="frHelp_hgeneral">General</string>

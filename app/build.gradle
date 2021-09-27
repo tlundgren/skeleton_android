@@ -5,6 +5,13 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'dagger.hilt.android.plugin'
 
+// load properties related to the remote service
+def apiProperties = new Properties()
+def apiPropertiesFile = rootProject.file('api.properties')
+if (apiPropertiesFile.exists()) {
+    apiProperties.load(new FileInputStream(apiPropertiesFile))
+}
+
 android {
     compileSdkVersion 31
     buildToolsVersion "31.0.0"
@@ -32,6 +39,9 @@ android {
                 arguments += ["room.schemaLocation":"$projectDir/schemas".toString()]
             }
         }
+
+        buildConfigField("String", "appId", apiProperties['appId'])
+        buildConfigField("String", "appKey", apiProperties['appKey'])
     }
 
     buildFeatures {
@@ -122,6 +132,13 @@ dependencies {
 
     // logging timber
     implementation "com.jakewharton.timber:timber:$timber_version"
+
+    // json tools
+    implementation("com.squareup.moshi:moshi-kotlin:$moshik_version")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlinreflect_version")
+
+    // remote service
+    implementation("com.squareup.retrofit2:converter-moshi:$retrofitmoshi_version")
 
     // testing
     testImplementation "junit:junit:$junit_version"

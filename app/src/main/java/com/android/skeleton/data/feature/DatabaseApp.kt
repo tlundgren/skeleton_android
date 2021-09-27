@@ -7,12 +7,12 @@ import androidx.room.*
  * Stores [DbItem]s.
  */
 @Database(entities = [DbItem::class], version = 13)
-abstract class AppDatabase : RoomDatabase() {
+abstract class DatabaseApp : RoomDatabase() {
     abstract val daoItem: DaoItem
 
     companion object {
         @Volatile
-        private var instance: AppDatabase? = null
+        private var instance: DatabaseApp? = null
 
         fun getInstance(context: Context) =
             instance ?: synchronized(this) {
@@ -24,10 +24,10 @@ abstract class AppDatabase : RoomDatabase() {
                     }
             }
 
-        private fun buildDatabase(context: Context): AppDatabase {
+        private fun buildDatabase(context: Context): DatabaseApp {
             return Room.databaseBuilder(
                 context,
-                AppDatabase::class.java,
+                DatabaseApp::class.java,
                 "app.db"
             ).fallbackToDestructiveMigration()
                 .build()
