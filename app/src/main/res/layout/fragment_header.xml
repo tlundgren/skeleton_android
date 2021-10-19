@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".feature.FragmentHeader">
+    tools:context=".feature.item.FragmentHeader">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.android.skeleton.feature.list.ViewModelList" />
+            type="com.android.skeleton.feature.item.ViewModelItems" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

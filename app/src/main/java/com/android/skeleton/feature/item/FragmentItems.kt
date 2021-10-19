@@ -1,4 +1,4 @@
-package com.android.skeleton.feature.list
+package com.android.skeleton.feature.item
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import dagger.hilt.android.AndroidEntryPoint
-import com.android.skeleton.databinding.FragmentListBinding
+import com.android.skeleton.databinding.FragmentItemsBinding
 import com.android.skeleton.domain.Item
 import com.android.skeleton.feature.FragmentPagerDirections
 
@@ -18,9 +18,9 @@ import com.android.skeleton.feature.FragmentPagerDirections
  * Displays a list of [Item]s, the size of the list, a button to create new [Item]s.
  */
 @AndroidEntryPoint
-class FragmentList : Fragment() {
-    val viewModel: ViewModelList by activityViewModels()
-    private var _binding: FragmentListBinding? = null
+class FragmentItems : Fragment() {
+    val viewModel: ViewModelItems by activityViewModels()
+    private var _binding: FragmentItemsBinding? = null
     private val binding get() = _binding!!
 
     /**
@@ -35,7 +35,7 @@ class FragmentList : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentListBinding.inflate(inflater)
+        _binding = FragmentItemsBinding.inflate(inflater)
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
         setObservers()
@@ -106,7 +106,7 @@ class FragmentList : Fragment() {
     /**
      * Navigates to [Item] screen.
      */
-    private fun signaledToItem(itemData: ViewModelList.ItemData?) {
+    private fun signaledToItem(itemData: ViewModelItems.ItemData?) {
         itemData?.let {
             viewModel.resetSignalToItem()
             findNavController()

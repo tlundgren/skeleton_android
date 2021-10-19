@@ -1,4 +1,4 @@
-package com.android.skeleton.feature
+package com.android.skeleton.feature.item
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,14 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
 import com.android.skeleton.databinding.FragmentHeaderBinding
-import com.android.skeleton.feature.list.ViewModelList
+import com.android.skeleton.feature.item.ViewModelItems
 
 /**
  * Displays a summary of the list of data.
  */
 @AndroidEntryPoint
 class FragmentHeader : Fragment() {
-    private val viewModel: ViewModelList by activityViewModels()
+    private val viewModel: ViewModelItems by activityViewModels()
     private var _binding: FragmentHeaderBinding? = null
     private val binding get() = _binding!!
 

@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentItem"
-        android:name="com.android.skeleton.feature.FragmentItem"
+        android:name="com.android.skeleton.feature.item.FragmentItem"
         android:label="FragmentItem"
         tools:layout="@layout/fragment_item">
         <argument

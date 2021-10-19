@@ -1,4 +1,4 @@
-package com.android.skeleton.feature
+package com.android.skeleton.feature.settings
 
 import android.content.Context
 import android.text.Editable
@@ -7,6 +7,7 @@ import androidx.preference.PreferenceManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import com.android.skeleton.configuration.SETTING_YDEFAULT
+import com.android.skeleton.feature.PREFERENCE_SETTINGY
 import javax.inject.Inject
 
 /**

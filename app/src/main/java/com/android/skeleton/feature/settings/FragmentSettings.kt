@@ -1,4 +1,4 @@
-package com.android.skeleton.feature
+package com.android.skeleton.feature.settings
 
 import android.app.Activity
 import android.os.Bundle

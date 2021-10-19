@@ -42,7 +42,7 @@
 
     <string name="frAbout_title">About</string>
     <string name="frAbout_header">About</string>
-    <string name="frAbout_body">Something about the project, the app, the developers…</string>
+    <string name="frAbout_body">Skeleton is a template for Android apps.</string>
 
     <string name="frHelp_title">Help</string>
     <string name="frHelp_hgeneral">General</string>

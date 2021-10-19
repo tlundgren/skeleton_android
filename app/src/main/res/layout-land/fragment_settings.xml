@@ -3,13 +3,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".feature.FragmentSettings">
+    tools:context=".feature.settings.FragmentSettings">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.android.skeleton.feature.ViewModelSettings" />
+            type="com.android.skeleton.feature.settings.ViewModelSettings" />
     </data>
 
     <androidx.core.widget.NestedScrollView

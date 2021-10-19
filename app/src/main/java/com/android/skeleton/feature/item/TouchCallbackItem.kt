@@ -1,4 +1,4 @@
-package com.android.skeleton.feature.list
+package com.android.skeleton.feature.item
 
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView

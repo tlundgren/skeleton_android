@@ -1,4 +1,4 @@
-package com.android.skeleton.feature
+package com.android.skeleton.feature.item
 
 import android.app.Application
 import androidx.lifecycle.ViewModel

@@ -1,4 +1,4 @@
-package com.android.skeleton.feature.list
+package com.android.skeleton.feature.item
 
 import android.annotation.SuppressLint
 import android.content.res.Resources

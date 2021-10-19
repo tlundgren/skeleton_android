@@ -1,4 +1,4 @@
-package com.android.skeleton.feature.list
+package com.android.skeleton.feature.item
 
 import android.content.Context
 import android.view.View
@@ -9,14 +9,13 @@ import com.android.skeleton.di.FactoryRepository
 import com.android.skeleton.domain.Item
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import com.android.skeleton.feature.FragmentHeader
 import timber.log.Timber
 
 /**
- * Supports fragments [FragmentHeader], [FragmentList].
+ * Supports fragments [FragmentHeader], [FragmentItems].
  */
 @HiltViewModel
-class ViewModelList @Inject constructor(@ApplicationContext private val context: Context) :
+class ViewModelItems @Inject constructor(@ApplicationContext private val context: Context) :
     ViewModel() {
     private val factoryRepository = FactoryRepository()
     private val repositoryItem = factoryRepository.getRepositoryItem(context)

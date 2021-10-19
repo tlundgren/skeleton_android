@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
 import com.android.skeleton.R
 import com.android.skeleton.databinding.FragmentPagerBinding
+import com.android.skeleton.feature.settings.FragmentSettings
 import com.android.skeleton.general.PREFERENCE_EULA_ACCEPTED
 import com.android.skeleton.general.SHARED_PREFERENCES_EULA
 

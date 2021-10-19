@@ -40,7 +40,8 @@ appKey="a89fuafmnau893r2y39ysfsfs"
 Skeleton follows the MVVM architecture, and the good practices of one activity, multiple fragments;
 injecting dependencies; using repositories; and testing.
 Further, the app is split into several blocks, the main ones: data (database, repositories,
-data access objects...), domain (domain classes), features (app functionalities).
+data access objects...), domain (domain classes), features (app functionalities, ie "items", and
+"recipes").
 
 Other technical details:
 - Code is written in Kotlin.
