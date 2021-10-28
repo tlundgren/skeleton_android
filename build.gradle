@@ -32,6 +32,8 @@ buildscript {
         moshik_version = '1.12.0'
         kotlinreflect_version = '1.5.31'
         retrofitmoshi_version = '2.9.0'
+        fbbom_version = '28.4.2'
+        gservices_version = '4.3.10'
     }
     repositories {
         google()
@@ -43,6 +45,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        classpath "com.google.gms:google-services:$gservices_version"
         //classpath 'androidx.benchmark:benchmark-gradle-plugin:1.0.0'
     }
 }

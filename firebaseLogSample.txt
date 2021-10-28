@@ -1,0 +1,21 @@
+When a Firebase Event is triggered, you may find entries like these in your logs (so long
+as the right debug level is set, that is):
+
+2021-10-28 02:35:28.491 3388-999/com.android.skeleton V/FA: Connecting to remote service
+2021-10-28 02:35:28.598 3388-999/com.android.skeleton D/FA: Connected to remote service
+2021-10-28 02:35:28.599 3388-999/com.android.skeleton V/FA: Processing queued up service tasks: 1
+2021-10-28 02:35:30.527 3388-999/com.android.skeleton V/FA: Recording user engagement, ms: 2034
+2021-10-28 02:35:30.663 3388-999/com.android.skeleton V/FA: Activity paused, time: 1189348449
+2021-10-28 02:35:32.667 3388-999/com.android.skeleton D/FA: Application going to the background
+2021-10-28 02:35:37.800 3388-999/com.android.skeleton V/FA: Inactivity, disconnecting from the service
+...
+10-28 02:43:00.934 4488 88695 V FA-SVC  : Logging event: origin=app,name=item_operation,params=Bundle[{ga_event_origin(_o)=app, ga_screen_class(_sc)=ActivityMain, ga_screen_id(_si)=-8721122001536665, item=Item Z, operation=CREATE}]
+
+
+Commands to set firebase logging to verbose:
+adb shell setprop log.tag.FA VERBOSE
+adb shell setprop log.tag.FA-SVC VERBOSE
+
+Commands to enable/disable the device/app in Firebase, console DebugView:
+adb shell setprop debug.firebase.analytics.app com.android.skeleton
+adb shell setprop debug.firebase.analytics.app .none.

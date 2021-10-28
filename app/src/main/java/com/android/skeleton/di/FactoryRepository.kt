@@ -9,12 +9,11 @@ import com.android.skeleton.data.repository.RepositoryItem
 import com.android.skeleton.data.repository.RepositoryRecipe
 
 /**
- * Factory that provides repositories via dependency injection.
+ * Factory that provides repositories.
  */
+// This factory asks Hilt to install the repositories in the Singleton Component in order for them
+// to be singletons.
 class FactoryRepository {
-    /**
-     * Singleton.
-     */
     fun getRepositoryItem(context: Context): RepositoryItem {
         val entryPoint = EntryPointAccessors.fromApplication(
             context,
@@ -23,9 +22,6 @@ class FactoryRepository {
         return entryPoint.repositoryItem()
     }
 
-    /**
-     * Singleton.
-     */
     fun getRepositoryRecipe(context: Context): RepositoryRecipe {
         val entryPoint = EntryPointAccessors.fromApplication(
             context,

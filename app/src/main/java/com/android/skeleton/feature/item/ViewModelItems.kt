@@ -3,6 +3,8 @@ package com.android.skeleton.feature.item
 import android.content.Context
 import android.view.View
 import androidx.lifecycle.*
+import com.android.skeleton.analytics.event.ItemOperation
+import com.android.skeleton.di.FactoryAnalytics
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import com.android.skeleton.di.FactoryRepository
@@ -19,6 +21,7 @@ class ViewModelItems @Inject constructor(@ApplicationContext private val context
     ViewModel() {
     private val factoryRepository = FactoryRepository()
     private val repositoryItem = factoryRepository.getRepositoryItem(context)
+    private val analyticsSender = FactoryAnalytics().getSender(context)
     // consider where this restriction should be defined in your app
     private val maxListSize = 10
 
@@ -65,6 +68,7 @@ class ViewModelItems @Inject constructor(@ApplicationContext private val context
     fun deleteItem(item: Item) {
         viewModelScope.launch {
             repositoryItem.delete(item)
+            analyticsSender.sendEvent(ItemOperation(ItemOperation.Operation.DELETE, item.name))
         }
     }
 

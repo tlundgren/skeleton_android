@@ -6,6 +6,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.android.skeleton.analytics.event.ItemOperation
+import com.android.skeleton.di.FactoryAnalytics
 import com.android.skeleton.di.FactoryRepository
 import com.android.skeleton.domain.Item
 import kotlinx.coroutines.launch
@@ -13,10 +15,11 @@ import kotlinx.coroutines.launch
 /**
  * Supports [FragmentItem] in the creation and editing of [Item]s.
  */
-class ViewModelItem(application: Application, isNew: Boolean, val item: Item) :
+class ViewModelItem(application: Application, private val isNew: Boolean, val item: Item) :
     AndroidViewModel(application) {
     private val factoryRepository = FactoryRepository()
     private val repositoryItem = factoryRepository.getRepositoryItem(application)
+    private val analyticsSender = FactoryAnalytics().getSender(application)
 
     // existing items are not allowed to change name
     val isNameEditable = isNew
@@ -35,6 +38,9 @@ class ViewModelItem(application: Application, isNew: Boolean, val item: Item) :
         val descriptionString = description?.toString() ?: ""
         viewModelScope.launch {
             repositoryItem.save(Item(nameString, descriptionString, item.position))
+            if (isNew) {
+                analyticsSender.sendEvent(ItemOperation(ItemOperation.Operation.CREATE, nameString))
+            }
         }
         dismiss()
     }

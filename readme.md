@@ -9,6 +9,7 @@ in any app, and more:
 - shared preferences for persisting settings
 - horizontal and vertical layouts to adapt the UI to users devices
 - unit and component tests
+- logging of data for analytics
 
 
 <img src="/media/flow.gif" alt="Skeleton user flow" width="368px" />
@@ -36,25 +37,35 @@ appId="8sh282gg"
 appKey="a89fuafmnau893r2y39ysfsfs"
 ```
 
+In order to use Firebase, you first need to sign up with Firebase and register your app in a
+project, then you need to export the google-services.json file and copy it to the app module folder.
+Skeleton already includes Firebase and Firebase Analytics dependencies; if you plan to use other
+components of Firebase, however, you need to add their dependencies yourself.
+Firebase may change the way an app is set up, so please check their [website](https://firebase.google.com/) for current
+instructions relevant to both your development environment and your needs.
+
 ## Technical Details
 Skeleton follows the MVVM architecture, and the good practices of one activity, multiple fragments;
 injecting dependencies; using repositories; and testing.
 Further, the app is split into several blocks, the main ones: data (database, repositories,
 data access objects...), domain (domain classes), features (app functionalities, ie "items", and
-"recipes").
+"recipes"), analytics (structured so that a feature only depends on the analytics related to that 
+feature, and to make it easier to add and remove analytics providers).
 
 Other technical details:
 - Code is written in Kotlin.
+- Gradle as build system.
 - The UI uses Android Material.
 - Fragments are connected using Navigation with SafeArgs.
 - Settings are persisted using Shared Preferences.
 - Data is displayed using a Recycler view and adapters.
-- Local data is persisted in a SQLite database using Room, with a DAO and repository classes to manage it.
-- Remote data is fetched from a web service using Retrofit, and built into domain classes with Moshi.  
+- Local data is persisted in a SQLite database using Room, with DAO and repository to manage it.
+- Remote data is fetched from a web service with Retrofit, and built into domain classes with Moshi.  
 - Asynchronous tasks use Kotlin coroutines.
 - Injection uses Hilt.
 - Logging uses Timber.
 - Testing uses JUnit.
+- Analytics uses Firebase with an abstraction layer to reduce coupling to this provider.
 
 
 This project is provided **AS-IS**.
