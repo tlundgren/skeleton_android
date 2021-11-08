@@ -19,6 +19,9 @@ class SenderSimple @Inject constructor() : Sender {
         }
     }
 
+    override fun setUser(user: String) {
+        firebase.setUserId(user)
+    }
 }
 
 fun Map<String, String>.toBundle(): Bundle {

@@ -20,7 +20,7 @@ class FactoryAnalytics {
             context,
             SenderFactoryEntryPoint::class.java
         )
-        return entryPoint.firebase()
+        return entryPoint.sender()
     }
 
     /**
@@ -29,6 +29,6 @@ class FactoryAnalytics {
     @InstallIn(SingletonComponent::class)
     @EntryPoint
     interface SenderFactoryEntryPoint {
-        fun firebase(): SenderSimple
+        fun sender(): SenderSimple
     }
 }

@@ -12,4 +12,9 @@ interface Sender {
      * Sends [event] to the analytics providers in the scope of the [event].
      */
     fun sendEvent(event: Event)
+
+    /**
+     * Sets the user for whom events will be sent.
+     */
+    fun setUser(user: String)
 }

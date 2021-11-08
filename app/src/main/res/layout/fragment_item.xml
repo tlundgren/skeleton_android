@@ -126,6 +126,17 @@
                         android:text="@string/okay"
                         tools:text="OK" />
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/frItem_makecrash"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_screens"
+                    android:layout_marginTop="@dimen/margin_screenxl"
+                    android:layout_marginBottom="@dimen/margin_screenm"
+                    android:text="@string/frItem_makecrash"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 

@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 // load properties related to the remote service
 def apiProperties = new Properties()
@@ -144,6 +145,7 @@ dependencies {
     // firebase
     implementation platform("com.google.firebase:firebase-bom:$fbbom_version")
     implementation "com.google.firebase:firebase-analytics-ktx"
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
 
     // testing
     testImplementation "junit:junit:$junit_version"

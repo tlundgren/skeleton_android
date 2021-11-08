@@ -9,14 +9,14 @@ in any app, and more:
 - shared preferences for persisting settings
 - horizontal and vertical layouts to adapt the UI to users devices
 - unit and component tests
-- logging of data for analytics
+- logging of data (including crashes) for analytics
 
 
 <img src="/media/flow.gif" alt="Skeleton user flow" width="368px" />
 
  
-Skeleton asks users to accept the EULA on start up.  After being accepted, it presents a pager with
-three screens: Items, IStats, Recipes, where:
+Skeleton asks users to accept the EULA on start up. After being accepted, it presents a pager with
+three screens: Foods, FStats, Recipes, where:
 - Items is an editable list of draggable items persisted locally.
 - IStats is information about Items.
 - Recipes is a list retrieved from a web service.
@@ -25,6 +25,7 @@ three screens: Items, IStats, Recipes, where:
 Make a copy of the project and use it as the basis for a new project in your editor of choice.
 Rename the package, change the app's name, delete the components you do not need, add what you
 miss, customize screens, customize the style...
+The code has comments to help you understand what it does, detect things you may want to change, etc.
 
 If you want to try the service used for fetching recipes, you will have to create an account
 on the service website. Then, create a file named "api.properties" in the root directory of the
@@ -38,11 +39,23 @@ appKey="a89fuafmnau893r2y39ysfsfs"
 ```
 
 In order to use Firebase, you first need to sign up with Firebase and register your app in a
-project, then you need to export the google-services.json file and copy it to the app module folder.
-Skeleton already includes Firebase and Firebase Analytics dependencies; if you plan to use other
+project, then export the google-services.json file and copy it to the apps module folder.
+Skeleton already includes Firebase Analytics and Crashlytics dependencies; if you plan to use other
 components of Firebase, however, you need to add their dependencies yourself.
 Firebase may change the way an app is set up, so please check their [website](https://firebase.google.com/) for current
 instructions relevant to both your development environment and your needs.
+
+You can force crashes creating items with a name that includes "crash". See below for how such a
+crash is reported in the Firebase console, including context data to help us in root cause analysis.
+
+<img src="/media/crash01.png" alt="Crash data in Firebase" />
+
+<img src="/media/crash02.png" alt="Crash data in Firebase" />
+
+You may use other analytics providers, like Sentry. Add the new provider's dependencies and
+add the necessary code in package analytics: this will mostly involve implementing a Sender and
+defining events.
+
 
 ## Technical Details
 Skeleton follows the MVVM architecture, and the good practices of one activity, multiple fragments;
@@ -54,7 +67,7 @@ feature, and to make it easier to add and remove analytics providers).
 
 Other technical details:
 - Code is written in Kotlin.
-- Gradle as build system.
+- The app is build with Gradle.
 - The UI uses Android Material.
 - Fragments are connected using Navigation with SafeArgs.
 - Settings are persisted using Shared Preferences.

@@ -14,7 +14,7 @@ import javax.inject.Inject
  * Write, delete, read, [Item]s.
  */
 class RepositoryItem @Inject constructor(private val daoItem: DaoItem) {
-    private val defaultItem = Item("Item X", "Lorem ipsum...", 0)
+    private val defaultItem = Item("Food X", "Lorem ipsum...", 0)
 
     fun size(): LiveData<Int> {
         return daoItem.getCountLive()

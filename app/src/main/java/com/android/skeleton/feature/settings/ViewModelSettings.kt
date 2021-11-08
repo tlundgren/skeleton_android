@@ -6,8 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.preference.PreferenceManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.android.skeleton.configuration.SETTING_YDEFAULT
-import com.android.skeleton.feature.PREFERENCE_SETTINGY
 import javax.inject.Inject
 
 /**
@@ -23,8 +21,8 @@ class ViewModelSettings @Inject constructor(@ApplicationContext private val cont
      * @return the value of setting y set by the user as default, the app default if none set
      */
     fun settingY(): String {
-        return preferences.getString(PREFERENCE_SETTINGY, SETTING_YDEFAULT)
-            ?: SETTING_YDEFAULT
+        return preferences.getString(PREFERENCE_SETTINGY, DEFAULT_SETTINGY)
+            ?: DEFAULT_SETTINGY
     }
 
     /**
