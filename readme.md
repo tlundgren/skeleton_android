@@ -17,15 +17,16 @@ in any app, and more:
  
 Skeleton asks users to accept the EULA on start up. After being accepted, it presents a pager with
 three screens: Foods, FStats, Recipes, where:
-- Items is an editable list of draggable items persisted locally.
-- IStats is information about Items.
+- Foods is an editable list of draggable items persisted locally.
+- FStats is information about Foods.
 - Recipes is a list retrieved from a web service.
 
 ## Usage
 Make a copy of the project and use it as the basis for a new project in your editor of choice.
 Rename the package, change the app's name, delete the components you do not need, add what you
 miss, customize screens, customize the style...
-The code has comments to help you understand what it does, detect things you may want to change, etc.
+Functions and classes are documented, and there are comments alongside the code to help you
+understand what a piece of code does, notice what you should be aware of, and make modifications. 
 
 If you want to try the service used for fetching recipes, you will have to create an account
 on the service website. Then, create a file named "api.properties" in the root directory of the
@@ -53,8 +54,8 @@ crash is reported in the Firebase console, including context data to help us in 
 <img src="/media/crash02.png" alt="Crash data in Firebase" />
 
 You may use other analytics providers, like Sentry. Add the new provider's dependencies and
-add the necessary code in package analytics: this will mostly involve implementing a Sender and
-defining events.
+review the documentation and comments in package analytics. If you decide to keep the same
+architecture, adding a provider will mostly involve implementing a [Sender](https://github.com/tlundgren/skeleton_android/blob/main/app/src/main/java/com/android/skeleton/analytics/sender/Sender.kt) and defining [Events](https://github.com/tlundgren/skeleton_android/blob/main/app/src/main/java/com/android/skeleton/analytics/event/Event.kt).
 
 
 ## Technical Details
@@ -72,6 +73,7 @@ Other technical details:
 - Fragments are connected using Navigation with SafeArgs.
 - Settings are persisted using Shared Preferences.
 - Data is displayed using a Recycler view and adapters.
+- Some UI data is exposed via LiveData.  
 - Local data is persisted in a SQLite database using Room, with DAO and repository to manage it.
 - Remote data is fetched from a web service with Retrofit, and built into domain classes with Moshi.  
 - Asynchronous tasks use Kotlin coroutines.

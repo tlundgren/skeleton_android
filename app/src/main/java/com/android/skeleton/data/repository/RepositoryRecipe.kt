@@ -11,6 +11,8 @@ import javax.inject.Inject
  * Read [Recipe]s.
  */
 class RepositoryRecipe @Inject constructor(private val serviceRecipe: ServiceRecipe) {
+
+    // in a real app, you may want to consider caching
     suspend fun loadAll(): List<Recipe> {
         Timber.d("RepositoryRecipe.loadAll")
         var recipes: List<Recipe> = emptyList()
