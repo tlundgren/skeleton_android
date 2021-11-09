@@ -81,76 +81,73 @@ android {
 dependencies {
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.21"
 
     // android ktx
-    implementation "androidx.core:core-ktx:$corektx_version"
+    implementation "androidx.core:core-ktx:1.6.0"
 
     // support libraries
-    implementation "androidx.appcompat:appcompat:$appcompat_version"
-    implementation "androidx.legacy:legacy-support-v4:$legacy_version"
-    //implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.appcompat:appcompat:1.3.1"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
 
     // support java 8 in any sdk version
-    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:$desugar_version"
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:1.1.5"
 
     // ui
-    implementation "androidx.fragment:fragment-ktx:$fragment_version"
-    implementation "com.google.android.material:material:$material_version"
-    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
-    implementation "androidx.viewpager2:viewpager2:$viewpager_version"
-    implementation "androidx.cardview:cardview:$cardview_version"
+    implementation "androidx.fragment:fragment-ktx:1.3.6"
+    implementation "com.google.android.material:material:1.4.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.0"
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+    implementation "androidx.cardview:cardview:1.0.0"
 
     // preference
-    implementation "androidx.preference:preference-ktx:$preference_version"
+    implementation "androidx.preference:preference-ktx:1.1.1"
 
     // image loading, display, etc
-    // implementation "com.facebook.fresco:fresco:$fresco_version"
+    // implementation "com.facebook.fresco:fresco:2.3.0"
 
     // lifecycle
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecyclevm_version"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleld_version"
-    // uncomment to use lifecycle annotations
-    // implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0-alpha03"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
 
     // navigation
-    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
 
     // coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
 
     // room db
-    implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
-    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-runtime:2.3.0"
+    kapt "androidx.room:room-compiler:2.3.0"
+    implementation "androidx.room:room-ktx:2.3.0"
 
     // dependency injection
-    implementation "com.google.dagger:hilt-android:$hilt_version"
-    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
-    kapt "androidx.hilt:hilt-compiler:$hiltandroidxc_version"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltandroidx_version"
+    implementation "com.google.dagger:hilt-android:2.38.1"
+    kapt "com.google.dagger:hilt-android-compiler:2.38.1"
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
 
     // logging timber
-    implementation "com.jakewharton.timber:timber:$timber_version"
+    implementation "com.jakewharton.timber:timber:4.7.1"
 
     // json tools
-    implementation("com.squareup.moshi:moshi-kotlin:$moshik_version")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlinreflect_version")
+    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.31")
 
     // remote service
-    implementation("com.squareup.retrofit2:converter-moshi:$retrofitmoshi_version")
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
 
     // firebase
-    implementation platform("com.google.firebase:firebase-bom:$fbbom_version")
+    implementation platform("com.google.firebase:firebase-bom:28.4.2")
     implementation "com.google.firebase:firebase-analytics-ktx"
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
 
     // testing
-    testImplementation "junit:junit:$junit_version"
-    androidTestImplementation "androidx.arch.core:core-testing:$coretesting_version"
-    androidTestImplementation "androidx.test.ext:junit:$junitext_version"
-    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
-    androidTestImplementation "androidx.test:rules:$testrules_version"
+    testImplementation "junit:junit:4.13.2"
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+    androidTestImplementation "androidx.test.ext:junit:1.1.3"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:2.38.1"
+    androidTestImplementation "androidx.test:rules:1.4.0"
 }
